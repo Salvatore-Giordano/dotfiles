@@ -1,0 +1,83 @@
+[core]
+	editor = /usr/bin/vim
+	excludesfile = ~/.gitignore_global
+[user]
+	name = Salvatore Giordano
+	email = salvatoregiordanoo@gmail.com
+
+[alias]
+	amend = commit --amend
+	fixup = commit --amend --no-edit
+	st = status 
+	co = checkout
+	cob = checkout -b
+	cp = cherry-pick
+
+	# show last commit
+	last = log -1 HEAD
+
+	# unstage staged files (or pass a filename)
+	unstage = reset HEAD --
+
+	# undo last commit(s) and keep changes, with files unstaged
+	r1 = reset HEAD^
+	r2 = reset HEAD^^
+
+    # discard all changes since last commit (use with caution)
+    rh = reset HEAD --hard
+
+	# undo last commit(s) and discard changes (use with caution)
+	rh1 = reset HEAD^ --hard
+	rh2 = reset HEAD^^ --hard
+
+	# fast grep on current folder and subfolders
+	g = grep --break --heading --line-number
+
+    # edit global git config
+	ec = config --global -e
+
+    # add all changes including untracked files and then create a commit
+    # with message...
+    cm = !git add -A && git commit -m
+
+    # add all changes including untracked files and then commit with
+    # 'SAVEPOINT' message.
+    save = !git add -A && git commit -m 'SAVEPOINT'
+
+    # this is functionally identical to 'r1' but it makes more sense
+    # semantically, as it is going to be used after a 'save' or 'wip'
+    undo = reset HEAD^ --mixed
+
+    # add all tracked changes (do not untracked files) and then commit with
+    # 'WIP' message.
+    wip = !git add -u && git commit -m 'WIP'
+
+    # add changes in working dir to a WIPE SAVEPOINT commit, then wipe that
+    # commit so: A) working dir is clean and B) I can still go back to
+    # that work I wiped if needs arises (via reflog).
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+    # show a tree with all branches
+    tree = !git log --graph --decorate --all --oneline
+
+[color]
+	ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[grep]
+	lineNumber = true
+[push]
+	default = simple
+[rerere]
+	enabled = true
