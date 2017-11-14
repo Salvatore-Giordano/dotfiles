@@ -10,9 +10,12 @@
 	fixup = commit --amend --no-edit
 	st = status 
 	co = checkout
+	br = branch
 	cob = checkout -b
 	cp = cherry-pick
-        br = branch
+        publish = "!git push -u origin $(git branch-name)"
+        unpublish = "!git push origin :$(git branch-name)"
+        delete-merged-branches = "!git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 	# show last commit
 	last = log -1 HEAD
@@ -64,21 +67,27 @@
 [color]
 	ui = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+   	current = yellow reverse
+  	local = yellow
+  	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  	meta = yellow bold
+  	frag = magenta bold
+  	old = red bold
+  	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+  	added = yellow
+  	changed = green
+  	untracked = cyan
 [grep]
 	lineNumber = true
 [push]
 	default = simple
 [rerere]
 	enabled = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
