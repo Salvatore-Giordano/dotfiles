@@ -12,6 +12,7 @@
 	co = checkout
 	cob = checkout -b
 	cp = cherry-pick
+        br = branch
 
 	# show last commit
 	last = log -1 HEAD
