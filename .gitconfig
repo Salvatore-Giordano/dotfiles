@@ -11,6 +11,7 @@
 	st = status 
 	co = checkout
 	br = branch
+        branch-name = "!git rev-parse --abbrev-ref HEAD"
 	cob = checkout -b
 	cp = cherry-pick
         publish = "!git push -u origin $(git branch-name)"
