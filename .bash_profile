@@ -53,3 +53,6 @@ fi
 if [ -f ~/.bashrc ]; then 
     source ~/.bashrc 
 fi
+
+export GOPATH=~/Development/Go
+export PATH=$PATH:$GOPATH/bin
