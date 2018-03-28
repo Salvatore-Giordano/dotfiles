@@ -21,6 +21,7 @@ alias ll="ls -l"
 alias l="ls -l"
 alias la="ls -la"
 alias s="git st"
+alias dclean="docker ps -q -a | xargs docker rm"
 
 ###
 ## Show git branch (if any) directly in command prompt! :)
@@ -63,3 +64,7 @@ export GOBIN=$HOME/Development/Go/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/Development/flutter/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH=$PATH:/usr/local/mysql/bin
+
