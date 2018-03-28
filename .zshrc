@@ -104,4 +104,4 @@ source $ZSH/oh-my-zsh.sh
 alias subl='/Applications/Sublime\ Text\.app/Contents/SharedSupport/bin/subl'
 alias s="git st"
 
-export PS1='${ret_status} %{$fg[cyan]%}$(pwd)%{$reset_color%} $(git_prompt_info)'
+export PS1='${ret_status} %{$fg[cyan]%}$(print -rD $PWD)%{$reset_color%} $(git_prompt_info)'
