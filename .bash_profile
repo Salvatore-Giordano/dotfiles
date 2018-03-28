@@ -55,16 +55,12 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc 
 fi
 
-=======
 ### Exports
-
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/Development/Go
 export GOBIN=$HOME/Development/Go/bin
-
-export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/Development/flutter/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
-export PATH=$PATH:/usr/local/mysql/bin
 
