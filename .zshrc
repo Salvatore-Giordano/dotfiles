@@ -7,7 +7,15 @@ export ZSH=/Users/salvatore/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='075'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='075'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='075'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs command_execution_time)
+DISABLE_UPDATE_PROMPT=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -103,5 +111,13 @@ source $ZSH/oh-my-zsh.sh
 # ALIASES
 alias subl='/Applications/Sublime\ Text\.app/Contents/SharedSupport/bin/subl'
 alias s="git st"
+alias artisan='php artisan'
 
-export PS1='${ret_status} %{$fg[cyan]%}$(print -rD $PWD)%{$reset_color%} $(git_prompt_info)'
+export PATH=~/Development/flutter/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=~/Library/Android/sdk/platform-tools:$PATH
+export LANG=en_US.UTF-8
+export FLUTTER_ROOT=/Users/salvatore/Development/flutter
+export GOPATH=~/Development/Go
+export PATH="/usr/local/sbin:$PATH"
+export PATH=$GOPATH/bin:$PATH
