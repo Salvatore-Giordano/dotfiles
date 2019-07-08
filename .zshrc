@@ -72,7 +72,6 @@ plugins=(
   docker-compose
   docker
   gitignore
-  laravel5
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
@@ -105,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ALIASES
@@ -119,5 +118,20 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export LANG=en_US.UTF-8
 export FLUTTER_ROOT=/Users/salvatore/Development/flutter
 export GOPATH=~/Development/Go
-export PATH="/usr/local/sbin:$PATH"
+export PATH=/usr/local/sbin:$PATH
 export PATH=$GOPATH/bin:$PATH
+
+dcorrect () {
+	if [ $# -ne 1 ]; then echo "specify a command to ignore" && return 1; fi
+	echo "alias $1=\"nocorrect $1\"" >> ~/.zshrc
+}
+
+alias npm="nocorrect npm"
+
+bindkey "\e\eOD" backward-word 
+bindkey "\e\eOC" forward-word
+
+export KUBECONFIG=$KUBECONFIG:$HOME/Development/mimoto/mimoto-eks-config/.kubeconfig
+alias lab="nocorrect lab"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

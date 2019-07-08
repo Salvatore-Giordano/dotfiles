@@ -43,7 +43,9 @@
 
     # add all changes including untracked files and then create a commit
     # with message...
-    cm = !git add -A && git commit -m
+    #cm = !git add -A && git commit -m
+
+    ci = commit -m
 
     # add all changes including untracked files and then commit with
     # 'SAVEPOINT' message.
