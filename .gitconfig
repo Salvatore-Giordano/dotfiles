@@ -28,8 +28,8 @@
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
 
-    # discard all changes since last commit (use with caution)
-    rh = reset HEAD --hard
+        # discard all changes since last commit (use with caution)
+        rh = reset HEAD --hard
 
 	# undo last commit(s) and discard changes (use with caution)
 	rh1 = reset HEAD^ --hard
@@ -88,9 +88,3 @@
 	default = simple
 [rerere]
 	enabled = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true

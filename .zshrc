@@ -110,7 +110,6 @@ alias zshconfig="vim ~/.zshrc"
 # ALIASES
 alias subl='/Applications/Sublime\ Text\.app/Contents/SharedSupport/bin/subl'
 alias s="git st"
-alias artisan='php artisan'
 
 export PATH=~/Development/flutter/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -118,8 +117,6 @@ export PATH=~/Library/Android/sdk/platform-tools:$PATH
 export LANG=en_US.UTF-8
 export FLUTTER_ROOT=/Users/salvatore/Development/flutter
 export GOPATH=~/Development/Go
-export PATH=/usr/local/sbin:$PATH
-export PATH=$GOPATH/bin:$PATH
 
 dcorrect () {
 	if [ $# -ne 1 ]; then echo "specify a command to ignore" && return 1; fi
@@ -127,11 +124,6 @@ dcorrect () {
 }
 
 alias npm="nocorrect npm"
-
-bindkey "\e\eOD" backward-word 
-bindkey "\e\eOC" forward-word
-
-export KUBECONFIG=$KUBECONFIG:$HOME/Development/mimoto/mimoto-eks-config/.kubeconfig
 alias lab="nocorrect lab"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
