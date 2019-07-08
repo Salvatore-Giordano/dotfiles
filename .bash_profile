@@ -64,3 +64,5 @@ export PATH=$HOME/Development/flutter/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
